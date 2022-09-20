@@ -1,0 +1,80 @@
+/****************************
+ * Folhas de estilo do site *
+ ****************************/
+
+/* Reset geral */
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Reset dos elementos "root" (raiz) */
+html, body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    /* Fonte padrão do site */
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+
+    /* Tamanho da fonte padrão → 1rem */
+    font-size: 16px;
+}
+
+/* ?Reset dos links */
+a {
+    color: rgb(70, 130, 180);
+    text-decoration: none;
+}
+
+/* Pseudo classe ":hover" → Ao passar o mouse sobre o elemento */
+a:hover {
+    color: rgb(255, 69, 0);
+    text-decoration: underline;
+}
+
+/* Reset dos elementos semânticos de bloco */
+header, nav, main, article, aside, footer {
+    display: block;
+}
+
+/* Estilização do fundo (background) */
+body {
+    background-attachment: fixed;
+    background-color: rgb(175, 0, 175);
+    background-image: url('/img/bg01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Wrap → Elemento que envolve os outros elementos da página */
+#wrap {
+
+    /* Tamanho e posicionamento responsivo */
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    /* Limita crescimento do bloco */
+
+    /* 320px - barra de rolagem - segurança */
+    min-width: 280px;
+
+    /* 1080px - barra de rolagem - segurança */
+    max-width: 1024px;
+
+    /* Centraliza bloco inteiro */
+    margin: auto;
+
+}
+
+/*************************
+ * Estilizando cabeçalho *
+ *************************/
+
+ #wrap > header {
+    background-color: brown;
+ }
