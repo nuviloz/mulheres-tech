@@ -1,185 +1,308 @@
-<!DOCTYPE html>
+/****************************
+ * Folhas de estilo do site *
+ ****************************/
 
-<!-- Início do documento HTML -->
-<html lang="pt-br">
+/*
+    Para saber mais, estude e faça os exemplos do site de referência
+    https://www.w3schools.com/css/
+*/
 
-<head>
+/*
+    A bilbioteca "Normalize" faz um reset em todos os elementos que tem 
+    apresentação diferente entre os navegadores, principalmente os mais 
+    antigos. Para saber mais, acesse o repo da biblioteca:
+    https://necolas.github.io/normalize.css/
+*/
+@import url('/normalize.css');
 
-    <!-- Carrega a tabela de caracteres universal -->
-    <meta charset="UTF-8">
+/*
+    Importa a fonte "Lato" do Google Fonts.
+    
+    A bilbioteca Google Fonts fornece milhares de fontes de uso livre para 
+    aplicativos. Para saber mais, acesse:
+    https://fonts.google.com/    
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-    <!-- Torna a página responsiva -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/***************
+ * Reset geral *
+ ***************/
+* {
+    box-sizing: border-box;
+    outline: none;
+}
 
-    <!-- Título do documento -->
-    <title>Mulheres.Tech - Layout</title>
+/* Reset dos elementos "root" (raiz) */
+html, body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 
-    <!-- 1. Inclui arquivo CSS do site -->
-    <link rel="stylesheet" href="/style.css">
+    /* Fonte padrão do site, usando a fonte "Lato" do Google Fonts */
+    font-family: 'Lato', sans-serif;
 
-    <!-- 2. Inclui Font Awesome pelo CDNJS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    /* Tamanho da fonte padrão → 1rem */
+    font-size: 16px;
 
-</head>
+    /* Cor da fonte padrão */
+    color: rgb(55, 0, 55);
+}
 
-<body>
+/* Reset dos links */
+a {
+    color: rgb(70, 130, 180);
+    text-decoration: none;
+}
 
-    <!-- Âncora do início da página -->
-    <a id="top"></a>
+/* Pseudo classe ":hover" → Ao passar o mouse sobre o elemento */
+a:hover {
+    color: rgb(255, 69, 0);
+    text-decoration: underline;
+}
 
-    <!-- Elemento wrap -->
-    <div id="wrap">
+/* Fundo da página */
+body {
+    background-attachment: fixed;
+    background-color: rgb(248, 166, 248);
+    background-image: url('/img/bg02.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-        <!-- Cabeçalho -->
-        <header>
+/* wrap */
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 280px;
+    max-width: 1024px;
+    margin: auto;
+}
 
-            <!-- Logotipo clicável usando Font Awesome -->
-            <a href="/" title="Página inicial">
-                <i class="fa-solid fa-laptop-code fa-fw"></i>
-            </a>
+/*************
+ * Cabeçalho *
+ *************/
 
-            <!-- Nome e slogan do site -->
-            <h1>
-                Mulheres.Tech
-                <small>Programadoras do Futuro</small>
-            </h1>
+#wrap>header {
+    border-radius: .5rem;
+    margin: .5rem;
+    background-attachment: fixed;
+    background-color: purple;
+    background-image: url('/img/bg03.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
 
-        </header>
+#wrap>header a {
+    display: block;
+    font-size: 4rem;
+    color: rgb(82, 0, 82);
+    padding: .5rem 1rem .5rem .5rem;
+    -webkit-text-stroke: 2px rgb(232, 201, 232);
+}
 
-        <!-- Menu principal -->
-        <nav>
+#wrap>header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
 
-            <!-- Ítem do menu -->
-            <a href="/" title="Página inicial">
+#wrap>header small {
+    display: block;
+    font-size: .9rem;
+    font-weight: normal;
+}
 
-                <!-- Ícone do ítem usando Font Awesome -->
-                <i class="fa-solid fa-house-chimney fa-fw"></i>
+/******************
+ * Menu principal *
+ ******************/
 
-                <!-- Legenda do ítem -->
-                <span>Início</span>
-            </a>
+#wrap>nav {
+    background-color: rgb(99, 45, 121);
+    border-radius: .5rem;
+    margin: .5rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-            <a href="/contacts" title="Faça contato">
-                <i class="fa-solid fa-comments fa-fw"></i>
-                <span>Contatos</span>
-            </a>
+#wrap>nav a {
+    padding: .7rem;
+    text-align: center;
+    color: rgb(255, 240, 255);
+    text-decoration: none;
+    transition: .25s;
+}
 
-            <a href="/about" title="Sobre a gente">
-                <i class="fa-solid fa-circle-info fa-fw"></i>
-                <span>Sobre</span>
-            </a>
+#wrap>nav a:hover {
+    color: rgb(250, 167, 250);
+}
 
-            <a href="/profile" title="Perfil de usuário">
-                <i class="fa-regular fa-user fa-fw"></i>
-                <span>Perfil</span>
-            </a>
+#wrap>nav a:first-child {
+    margin-right: auto;
+}
 
-        </nav>
+#wrap>nav i {
+    font-size: 2rem;
+}
 
-        <!-- Conteúdo -->
-        <main>
+#wrap>nav span {
+    display: block;
+    margin-top: .3rem;
+}
 
-            <!-- Conteúdo principal -->
-            <article>
+/* Menu principal responsivo */
 
-                <!--
-                    Este é um conteúdo "fake", apenas para "encher linguiça"
-                    e facilitar a construção do layout.
-                -->
-                <h2>Título de teste</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quia provident reiciendis earum, tenetur reprehenderit iure ipsum fugit praesentium alias deserunt sed maiores id rerum odio delectus perferendis voluptatum totam!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero hic, modi pariatur culpa animi cum! Consequatur, odit! Repudiandae, dolorem temporibus, quaerat, unde enim error eum minus praesentium libero quibusdam consequuntur.</p>
-                <img src="https://picsum.photos/200/200" alt="Imagem aleatória.">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae illum aliquam aperiam, laborum fugiat quos sunt expedita culpa! Minima harum mollitia aperiam nihil dolorem animi accusantium quia maxime expedita.</p>
-                <h3>Lista de links:</h3>
-                <ul>
-                    <li><a href="https://github.com/Luferat">GitHub do Fessô</a></li>
-                    <li><a href="https://catabits.com.br">Blog do Fessô</a></li>
-                    <li><a href="https://facebook.com/Luferat">Facebook do Fessô</a></li>
-                </ul>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam commodi inventore nemo doloribus asperiores provident, recusandae maxime quam molestiae sapiente autem, suscipit perspiciatis. Numquam labore minima, accusamus vitae exercitationem quod!</p>
-                <!-- Fim do conteúdo "fake" -->
+@media screen and (min-width: 480px) {
 
-            </article>
+    #wrap>nav i {
+        font-size: 1.2rem;
+    }
 
-            <!-- Conteúdo complementar / Barra lateral -->
-            <aside>
-                <header>Barra lateral</header>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, cumque porro.</p>
-            </aside>
+    #wrap>nav span {
+        display: inline;
+        margin-top: 0;
+    }
 
-        </main>
+}
 
-        <!-- Rodapé -->
-        <footer>
+/************
+ * Conteúdo *
+ ************/
 
-            <!-- Bloco superior do rodapé -->
-            <div id="fsup">
+#wrap>main {
+    display: flex;
+    flex-direction: column;
+}
 
-                <!-- Link para a página inicial -->
-                <a href="/" title="Página inicial">
-                    <i class="fa-solid fa-house-chimney fa-fw"></i>
-                </a>
+#wrap>main article, #wrap>main aside {
+    background-color: white;
+    border-radius: .5rem;
+    overflow: auto;
+    margin: 0 .5rem;
+    padding: 0 1rem;
+}
 
-                <!-- Licença do app -->
-                <div id="copy">&copy; 2022 André Luferat</div>
+#wrap>main aside {
+    margin: .5rem;
+}
 
-                <!-- Link para o topo da página -->
-                <a href="#top" title="Topo da página">
-                    <i class="fa-solid fa-circle-up fa-fw"></i>
-                </a>
-            </div>
+/* Conteúdo responsivo */
 
-            <!-- Bloco inferior do rodapé -->
-            <div id="finf">
+@media screen and (min-width: 768px) {
+    #wrap>main {
+        flex-direction: row;
+    }
 
-                <!-- Menu de redes sociais -->
-                <nav id="fsocial">
-                    <h4>Redes sociais:</h4>
-                    <a href="https://facebook.com/Luferat" target="_blank" title="Acesse nosso Facebook">
-                        <i class="fa-brands fa-square-facebook fa-fw"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://youtube.com/Luferat" target="_blank" title="Nosso canal no Youtube">
-                        <i class="fa-brands fa-square-youtube fa-fw"></i>
-                        <span>Youtube</span>
-                    </a>
-                    <a href="https://github.com/Luferat" target="_blank" title="Nossa página no GitHub">
-                        <i class="fa-brands fa-square-github fa-fw"></i>
-                        <span>GitHub</span>
-                    </a>
-                </nav>
+    #wrap>main article {
+        flex-grow: 1;
+        margin-bottom: .5rem;
+    }
 
-                <!-- Menu de links internos -->
-                <nav id="ftools">
-                    <h4>Acesso rápido:</h4>
-                    <a href="/contacts">
-                        <i class="fa-solid fa-comments fa-fw"></i>
-                        <span>Contatos</span>
-                    </a>
-                    <a href="/about">
-                        <i class="fa-solid fa-circle-info fa-fw"></i>
-                        <span>Sobre</span>
-                    </a>
-                    <a href="/policies">
-                        <i class="fa-solid fa-user-lock fa-fw"></i>
-                        <span>Sua privacidade</span>
-                    </a>
-                </nav>
+    #wrap>main aside {
+        margin: 0 .5rem 0 0;
+        min-width: 220px;
+        max-width: 220px;
+        margin-bottom: .5rem;
+    }
+}
 
-            </div>
+/**********
+ * Rodapé *
+ **********/
 
-        </footer>
+#wrap>footer {
+    background-color: rgb(99, 45, 121);
+    border-radius: .5rem;
+    margin: .5rem;
+    margin-top: 0;
+    color: rgb(255, 240, 255);
+}
 
-        <!-- Fecha o wrap -->
-    </div>
+/* Bloco superior do rodapé */
 
-    <!-- 1. Inclui a biblioteca jQuery pelo CDNJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+#fsup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dotted rgb(249, 84, 249);
+}
 
-    <!-- 2. Inclui o JavaScript do site -->
-    <script src="/script.js"></script>
+#fsup a {
+    padding: .5rem;
+    text-align: center;
+    color: rgb(255, 240, 255);
+    text-decoration: none;
+    transition: .25s;
+    font-size: 1.5rem;
+}
 
-</body>
+#fsup a:hover {
+    color: rgb(250, 167, 250);
+}
 
-</html>
+/* Bloco inferior do rodapé */
+
+#finf {
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+}
+
+#finf h4 {
+    margin: 0 0 .7rem 0;
+    font-weight: normal;
+}
+
+#finf nav a {
+    display: block;
+    padding: .3rem 0;
+    font-size: .9rem;
+    color: rgb(255, 240, 255);
+}
+
+#finf nav a:hover {
+    color: rgb(250, 167, 250);
+    text-decoration: none;
+}
+
+/* Rodapé responsivo */
+
+@media screen and (min-width: 426px) {
+
+    #finf {
+        justify-content: space-around;
+    }
+
+}
+
+/* 
+    Sticky Footer
+    Força o rodapé a aparecer sempre na parte inferior da tela,
+    aumentando automaticamente o height de <main>.
+*/
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap>main {
+    flex-grow: 1;
+}
+
+#wrap>main article {
+    flex-grow: 1;
+}
+
+#wrap>span {
+    font-size: 1px;
+}
